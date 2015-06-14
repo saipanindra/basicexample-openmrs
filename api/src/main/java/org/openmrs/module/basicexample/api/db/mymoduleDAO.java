@@ -13,6 +13,9 @@
  */
 package org.openmrs.module.basicexample.api.db;
 
+import java.util.List;
+
+import org.openmrs.module.basicexample.mymodule;
 import org.openmrs.module.basicexample.api.mymoduleService;
 
 /**
@@ -23,4 +26,20 @@ public interface mymoduleDAO {
 	/*
 	 * Add DAO methods here
 	 */
+	  /**
+     * @see org.openmrs.module.basicexample.api.mymoduleService#getAllMyEntries()
+     */
+    List<mymodule> getAllMyEntries();
+    /**
+     * @see org.openmrs.module.basicexample.api.mymoduleService#getMyEntry(java.lang.Integer)
+     */
+    mymodule getMyEntry(Integer id);
+    /**
+     * @see org.openmrs.module.basicexample.api.mymoduleService#saveMyEntry(org.openmrs.module.basicexample.mymodule)
+     */
+    mymodule saveMyEntry(mymodule myEntry);
+    /**
+     * @see org.openmrs.module.basicexample.api.mymoduleService#purgeMyEntry(org.openmrs.module.basicexample.mymodule)
+     */
+    void purgeMyEntry(mymodule myEntry);
 }
