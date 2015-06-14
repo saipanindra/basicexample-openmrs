@@ -8,5 +8,16 @@
         See http://www.liquibase.org/manual/home#available_database_refactorings
         for a list of supported elements and attributes
     -->
+    <changeSet author="saipanindra" id="20131010-1">
+        <comment>Create the mymodule table</comment>
+        <createTable tableName="basicexample_mymodule">
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(255)" />
+            <column name="description" type="varchar(255)" />
+            <column name="uuid" type="char(38)" />
+        </createTable>
+    </changeSet>
     
 </databaseChangeLog>
