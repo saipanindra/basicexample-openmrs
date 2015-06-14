@@ -13,9 +13,12 @@
  */
 package org.openmrs.module.basicexample.api.db.hibernate;
 
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.SessionFactory;
+import org.openmrs.module.basicexample.mymodule;
 import org.openmrs.module.basicexample.api.db.mymoduleDAO;
 
 /**
@@ -39,4 +42,32 @@ public class HibernatemymoduleDAO implements mymoduleDAO {
     public SessionFactory getSessionFactory() {
 	    return sessionFactory;
     }
+
+	@Override
+	public List<mymodule> getAllMyEntries() {
+		// TODO Auto-generated method stub
+		return
+				sessionFactory.getCurrentSession().createCriteria(mymodule.class).list();
+	}
+
+	@Override
+	public mymodule getMyEntry(Integer id) {
+		// TODO Auto-generated method stub
+		return (mymodule)
+				sessionFactory.getCurrentSession().get(mymodule.class, id);
+	}
+
+	@Override
+	public mymodule saveMyEntry(mymodule myEntry) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().save(myEntry);
+		return myEntry;
+	}
+
+	@Override
+	public void purgeMyEntry(mymodule myEntry) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().delete(myEntry);
+		
+	}
 }
