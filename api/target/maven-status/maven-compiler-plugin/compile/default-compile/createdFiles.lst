@@ -1,0 +1,6 @@
+org\openmrs\module\basicexample\api\impl\mymoduleServiceImpl.class
+org\openmrs\module\basicexample\api\db\mymoduleDAO.class
+org\openmrs\module\basicexample\mymoduleActivator.class
+org\openmrs\module\basicexample\mymodule.class
+org\openmrs\module\basicexample\api\db\hibernate\HibernatemymoduleDAO.class
+org\openmrs\module\basicexample\api\mymoduleService.class
