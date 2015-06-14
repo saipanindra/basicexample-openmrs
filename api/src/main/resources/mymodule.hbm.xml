@@ -5,7 +5,6 @@
 
 <hibernate-mapping package="org.openmrs.module.basicexample">
 
-<!--
 	<class name="mymodule"
 		table="${project.parent.artifactId}_mymodule">
 		<id name="id" type="int" column="id" unsaved-value="0">
@@ -14,7 +13,7 @@
 		<discriminator column="id" insert="false" />
 		<property name="uuid" type="java.lang.String" column="uuid"
 			length="38" unique="true" />
+        <property name="name" type="java.lang.String" column="name" length ="255" unique="true" />
+        <property name="description" type ="java.lang.String" column="description" length = "255" />
 	</class>
--->
-
 </hibernate-mapping>

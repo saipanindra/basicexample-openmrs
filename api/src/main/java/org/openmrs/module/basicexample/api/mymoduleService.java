@@ -13,7 +13,10 @@
  */
 package org.openmrs.module.basicexample.api;
 
+import java.util.List;
+
 import org.openmrs.api.OpenmrsService;
+import org.openmrs.module.basicexample.mymodule;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -29,8 +32,32 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface mymoduleService extends OpenmrsService {
      
-	/*
-	 * Add service methods here
-	 * 
-	 */
+	  /**
+     * Gets a list of my entries.
+     *
+     * @return myentry list.
+     */
+    @Transactional(readOnly = true)
+    List<mymodule> getAllMyEntries();
+    /**
+     * Gets myentry for a given id.
+     *
+     * @param id myentry id
+     * @return myentry with the given id
+     */
+    @Transactional(readOnly = true)
+    mymodule getMyEntry(Integer id);
+    /**
+     * Saves a new or existing myentry.
+     *
+     * @param mymodule the entry  to save.
+     * @return the saved department.
+     */
+    mymodule saveMyEntry(mymodule myentry);
+    /**
+     * Deletes myentry from the database.
+     *
+     * @param myentry the entry to delete.
+     */
+    void purgeMyEntry(mymodule myentry);
 }

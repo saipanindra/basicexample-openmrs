@@ -13,9 +13,12 @@
  */
 package org.openmrs.module.basicexample.api.impl;
 
+import java.util.List;
+
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.module.basicexample.mymodule;
 import org.openmrs.module.basicexample.api.mymoduleService;
 import org.openmrs.module.basicexample.api.db.mymoduleDAO;
 
@@ -41,4 +44,28 @@ public class mymoduleServiceImpl extends BaseOpenmrsService implements mymoduleS
     public mymoduleDAO getDao() {
 	    return dao;
     }
+
+	@Override
+	public List<mymodule> getAllMyEntries() {
+		// TODO Auto-generated method stub
+		return dao.getAllMyEntries();
+		}
+
+	@Override
+	public mymodule getMyEntry(Integer id) {
+		// TODO Auto-generated method stub
+		return dao.getMyEntry(id);
+	}
+
+	@Override
+	public mymodule saveMyEntry(mymodule myentry) {
+		// TODO Auto-generated method stub
+		return dao.saveMyEntry(myentry);
+	}
+
+	@Override
+	public void purgeMyEntry(mymodule myentry) {
+		// TODO Auto-generated method stub
+		dao.purgeMyEntry(myentry);
+	}
 }
